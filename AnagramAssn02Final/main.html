@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>List view and Storage</title>
+<meta charset="utf-8">
+</head>
+<body>
+{% if user %}
+<center><h1><b><i>ANAGRAM ENGINE</i></h1></b></center>
+<div id = "menu" align = "center" >
+  <ul style="list-style-type:none;">
+        <a href = "/add"><b><li>ADD</li></b></a>
+        <a href = "/uanagram"><b><li>UNIQUE ANAGRAM</li></b></a>
+        <a href = "/wordlist"><b><li>WORD LIST</li></b></a>
+
+     </div>
+     <form method="get" align="center" action="/">
+       ENTER THE WORD:<input type="text" name="input77" pattern="[a-zA-Z]+" required="True"/><br/>
+         <input type="submit" name="button" value="search"/>
+         </form>
+         {% for y in my_list.strings %}{{ y }}<br/>{% endfor %}
+         {% for i in a %}{% for j in i.strings %}{{ j }}<br/>{% endfor %}{% endfor %}
+{% else %}
+<h1><b><center><p><i>Hello and Welcome to the Application!</i></p></b></h1></center>
+{% endif %}
+<b><i><p align="center">You can {{ url_string }} <a href='{{ url }}'>here</i></a></p></b>
+</body>
+</html>
